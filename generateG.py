@@ -17,7 +17,7 @@ def GraphGenerator(nodes):
 
             add_prob = random.randint(0, 1)
             if add_prob == 1:
-                print("adding edge for", alpha, " ", beta)
+                # print("adding edge for", alpha, " ", beta)
                 G.add_edge(chr(alpha), chr(beta))
     return G
 
@@ -28,6 +28,4 @@ def DrawGraph(G):
     plt.margins(0.2)
     plt.show()
 
-nodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75]
-G=GraphGenerator(nodes)
-DrawGraph(G)
+
