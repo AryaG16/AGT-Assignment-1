@@ -11,12 +11,12 @@ def GenerateLaplacianMatrix(G):
         degree = len(connected_nodes)
         
         # print(i)
-        i=ord(i)-65
+        i = ord(i) - 65
         # setting diagonal of Laplacian-L
         L[i][i] = degree
 
         for j in connected_nodes:
-            j=ord(j)-65
+            j = ord(j) - 65
             L[i][j] = -1
             
     return L
