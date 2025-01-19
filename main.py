@@ -5,12 +5,12 @@ from gaussianE import gaussian_elimination
 
 # Generating Random Graph of 11 nodes
 nodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75]
-# nodes = [65, 66, 67]
+# nodes = [65, 66, 67,68,69]
 G = GraphGenerator(nodes)
 DrawGraph(G)
 
 # Making the Laplacian Matrix
-L = GenerateLaplacianMatrix(G)
+L,mc = GenerateLaplacianMatrix(G)
 print("Laplacian Matrix")
 print(L)
 
@@ -24,7 +24,11 @@ print(ML)
 
 # Getting Upper Triangular Matrix using gaussian elimination
 UTM = gaussian_elimination(ML)  
+print("Shape   ",UTM.shape)
+print(UTM)
 
 # Det of Upper Triangular Matrix
-# det_of_L_minor = DetOfTransformedMatrix(UTM)
-# print("No. of Spanning Tree for this graph is: ", det_of_L_minor)
+det_of_L_minor = DetOfTransformedMatrix(UTM)
+print("No. of Spanning Tree for this graph is: ", det_of_L_minor+mc)
+
+DrawGraph(G)
