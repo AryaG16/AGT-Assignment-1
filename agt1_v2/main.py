@@ -6,7 +6,7 @@ from gaussianE import gaussian_elimination
 # Generating Random Graph of 11 nodes
 # nodes = [65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75]
 # nodes = [65, 66, 67,68]
-nodes=11
+nodes=int(input("Enter Number of vertices: "))
 nodeList = GraphGenerator(nodes)
 
 
