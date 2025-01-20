@@ -16,9 +16,9 @@ class Node:
 def GraphGenerator(nodes):
 
     nodeList={}
-    for a in nodes:
-        node=Node(chr(a))
-        nodeList.update({chr(a):node})
+    for a in range(nodes):
+        node=Node(a)
+        nodeList.update({a:node})
     
     for p in nodeList:
         print("node: ",nodeList[p].name)
@@ -29,19 +29,20 @@ def GraphGenerator(nodes):
     print("\n")
 
     # Edges
-    for alpha in nodes:
-        for beta in nodes:
+    for alpha in range(nodes):
+        for beta in range(nodes):
             if(alpha >= beta):
                 continue
-            a=chr(alpha)
-            b=chr(beta)
-            node1=nodeList[a]
-            node2=nodeList[b]
+            
+            # a=chr(alpha)
+            # b=chr(beta)
+            node1=nodeList[alpha]
+            node2=nodeList[beta]
 
             add_prob = random.randint(0, 1)
             if add_prob == 1:
-                node1.add_neighbor(b)
-                node2.add_neighbor(a)
+                node1.add_neighbor(beta)
+                node2.add_neighbor(alpha)
 
     for p in nodeList:
         print("node: ",nodeList[p].name)

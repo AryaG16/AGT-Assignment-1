@@ -9,12 +9,11 @@ def GenerateLaplacianMatrix(nodeList):
         connected_nodes = nodeList[i].neighbors
         degree = nodeList[i].degree
         
-        idx = ord(i) - 65
-        # setting diagonal of Laplacian-L
-        L[idx][idx] = degree
+        # idx = ord(i) - 65
+        L[i][i] = degree
 
         for j in connected_nodes:
-            j = ord(j) - 65
-            L[idx][j] = -1
+            # j = ord(j) - 65
+            L[i][j] = -1
             
     return L, more_component
